@@ -68,9 +68,19 @@ void BrigManager::launch()
 void BrigManager::addPirates(int numPirates)
 {
     Pirate*   newPirate;
+    int randomNum;
     
     while (numPirates > 0) {
-        newPirate = new Pirate;
+        randomNum = random(3);
+        if(randomNum == 0){
+            newPirate = new Borc();
+        }
+        else if(randomNum == 1){
+            newPirate = new Dorc();
+        }
+        else{
+            newPirate = new Porc();
+        }
         *brig += newPirate;
         --numPirates;
     }
