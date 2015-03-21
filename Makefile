@@ -1,10 +1,19 @@
-OBJ = main.o BrigManager.o Brig.o Cell.o Pirate.o UImanager.o random.o CArray.o Queue.o
+OBJ = main.o BrigManager.o Brig.o Cell.o Pirate.o UImanager.o random.o CArray.o Queue.o Borc.o Dorc.o Porc.o
 
-a3:	$(OBJ)
-	g++ -o a3 $(OBJ)
+a4:	$(OBJ)
+	g++ -o a4 $(OBJ)
 
 main.o:	main.cc
 	g++ -c main.cc
+
+Borc.o:	Borc.cc Borc.h 
+	g++ -c Borc.cc
+
+Dorc.o:	Dorc.cc Dorc.h 
+	g++ -c Dorc.cc
+
+Porc.o:	Porc.cc Porc.h 
+	g++ -c Porc.cc
 
 BrigManager.o:	BrigManager.cc BrigManager.h 
 	g++ -c BrigManager.cc
@@ -31,5 +40,5 @@ random.o:	random.cc
 	g++ -c random.cc
 
 clean:
-	rm -f *.o a3
+	rm -f *.o a4
 
