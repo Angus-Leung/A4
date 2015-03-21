@@ -18,13 +18,10 @@ class Queue
         Queue();
         Queue(Queue&);
         ~Queue();
-        int push(Pirate*);
         void pop();
         Pirate* front();
-        bool empty();
         int getPirateSpace(int);
         Pirate* find(int);
-        int remove(int);
         void deleteData();
         Queue& operator+=(Pirate*);
         Queue& operator-=(Pirate*);

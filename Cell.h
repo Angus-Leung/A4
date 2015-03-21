@@ -16,8 +16,6 @@ class Cell
     bool    fits(Pirate*);
     Queue&  getPirates();
     int     getSpace();
-    void    reduceSpace(int);
-    void    increaseSpace(int);
     Cell&   operator+=(int);
     Cell&   operator-=(int);
     Cell&   operator+=(Pirate*);

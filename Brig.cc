@@ -37,7 +37,7 @@ Brig& Brig::operator+=(Pirate* pirate)
     return *this;
 }
 
-/*   Function:  addPirate	                         		    */
+/*   Function:  removePirate	                         		*/
 /*         in:  ID of pirate to be removed from the brig		*/
 /*    Purpose:  Removes a pirate with a matching ID from the    */
 /*              brig                                            */
