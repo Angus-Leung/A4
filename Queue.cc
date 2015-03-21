@@ -92,32 +92,29 @@ Pirate* Queue::front() {
     return head->data;
 }
 
-/*   Function:  empty                         			        */
+/*   Function:  overloaded Negation operator                    */
 /*        out:  Boolean indicating empty or non-empty           */
 /*    Purpose:  Indicates whether or not the Queue is empty     */
 
 bool Queue::operator!() {
     if (head == 0)
-        return true;
+        return false;
     else 
-        return false;   
+        return true;
 }
 
-/*   Function:  remove                         			        */
-/*         in:  ID of the pirate to be removed                  */
-/*    Purpose:  Removes a pirate with the given ID from the     */
-/*              Queue                                           */
-/*              (the actual data is deleted in the removePirate */
-/*              function)                                       */
+/*   Function:  overloaded subtraction assignment operator      */
+/*         in:  A pirate pointer to be removed                  */
+/*    Purpose:  Removes a pirate pointer from the Queue         */
 
-int Queue::remove(int pirateId) {
+Queue& Queue::operator-=(Pirate* piratePtr) {
     Node *currNode, *prevNode;
 
     prevNode = 0;
     currNode = head;
 
     while (currNode != 0) {
-        if (currNode->data->getId() == pirateId)
+        if (currNode->data->getId() == piratePtr->getId())
             break;
         prevNode = currNode;
         currNode = currNode->next;
@@ -139,7 +136,7 @@ int Queue::remove(int pirateId) {
 
     delete currNode;
     
-    return C_OK;
+    return this;
 
 }
 
