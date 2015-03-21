@@ -64,7 +64,7 @@ Brig& Brig::operator+=(Pirate* pirate)
     else {
         newCell = new Cell;
         cells += newCell;
-        cell->getPirates() += pirate;
+        newCell->getPirates() += pirate;
         *newCell -= pirate->getSpace();
     }
     return *this;
