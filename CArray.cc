@@ -18,7 +18,7 @@ CArray::~CArray()
 
 int CArray::getSize() { return size; }
 
-Cell* CArray::get(int index)
+Cell* CArray::operator[](int index)
 {
   if (index >= 0 && index < size)
     return elements[index];
@@ -37,3 +37,6 @@ CArray& CArray::+=(Cell* cell)
   return *this;
 }
 
+Cell* operator[](int index){
+    
+}
