@@ -18,6 +18,10 @@ class Cell
     int     getSpace();
     void    reduceSpace(int);
     void    increaseSpace(int);
+    Cell&   operator+=(int);
+    Cell&   operator-=(int);
+    Cell&   operator+=(Pirate*);
+    
   private:
     static int  nextId;
     int         cellNumber;

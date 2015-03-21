@@ -25,7 +25,12 @@ class Queue
         int getPirateSpace(int);
         Pirate* find(int);
         int remove(int);
-		void deleteData();
+        void deleteData();
+        Queue& operator+=(Pirate*);
+        Queue& operator-=(Pirate*);
+        Pirate* operator[](int);
+        bool operator!(Pirate*);
+    
     private:
         Node* head;
 };
