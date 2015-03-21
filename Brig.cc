@@ -42,6 +42,34 @@ int Brig::addPirate(Pirate* pirate)
     return C_OK;
 }
 
+/*   Function:  overloaded addition assignment operator         */
+/*         in:  Location of pirate to be added to the brig		*/
+/*    Purpose:  Adds a single pirate to the brig in a cell		*/
+/*				that has enough space for it					*/
+
+Brig& Brig::operator+=(Pirate* pirate)
+{
+    Cell* newCell;
+    int index = -1;
+
+    for (int i=0; i<cells.getSize(); ++i) {
+        if (cells[i]->fits(pirate)) 
+            index = i;
+    }
+
+    if (index >= 0) {
+        cells[index]->getPirates() += pirate;
+        *(cells[index]) -= pirate->getSpace();
+    }
+    else {
+        newCell = new Cell;
+        cells += newCell;
+        cell->getPirates() += pirate;
+        *newCell -= pirate->getSpace();
+    }
+    return *this;
+}
+
 /*   Function:  addPirate	                         		    */
 /*         in:  ID of pirate to be removed from the brig		*/
 /*    Purpose:  Removes a pirate with a matching ID from the    */
