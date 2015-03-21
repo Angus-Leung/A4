@@ -37,6 +37,3 @@ CArray& CArray::+=(Cell* cell)
   return *this;
 }
 
-Cell* operator[](int index){
-    
-}
