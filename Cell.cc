@@ -5,7 +5,7 @@ int Cell::nextId = 1;
 Cell::Cell(int size)
       : spaceRemaining(size)
 {
-  cellNumber = nextId++;
+    cellNumber = nextId++;
 }
 
 Queue&  Cell::getPirates()   { return pirates; }
@@ -14,15 +14,23 @@ int     Cell::getSpace()   { return spaceRemaining; }
 
 bool Cell::fits(Pirate* pirate)
 {
-  if ((spaceRemaining - pirate->getSpace()) < 0)
-    return false;
+    if ((spaceRemaining - pirate->getSpace()) < 0)
+        return false;
 
-  return true;
+    return true;
 }
 
-void Cell::reduceSpace(int pSpace)   { spaceRemaining -= pSpace; }
+void Cell::operator+=(int pSpace) 
+{ 
+    spaceRemaining += pSpace; 
+    return *this;
+}
 
-void Cell::increaseSpace(int pSpace) { spaceRemaining += pSpace; }
+void Cell::operator-=(int pSpace) 
+{ 
+    spaceRemaining -= pSpace; 
+    return *this;
+}
 
 
 Cell& operator+=(Pirate* newPirate){
@@ -30,3 +38,4 @@ Cell& operator+=(Pirate* newPirate){
     
     return *this;
 }
+
