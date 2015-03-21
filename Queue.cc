@@ -33,12 +33,12 @@ Queue::~Queue() {
     }
 }
 
-/*   Function:  push                         			        */
+/*   Function:  overloaded addition assignment operator         */
 /*         in:  Pointer pirate to be added to the Queue         */
-/*        out:  Int indicating success or failure               */
+/*        out:  Reference to the queue (cascading)              */
 /*    Purpose:  Adds the pirate pointer to the end of the Queue */
 
-int Queue::push(Pirate* newPirate) {
+Queue& Queue::operator+=(Pirate* newPirate) {
     Node *newNode;
     Node *currNode, *prevNode;
 
@@ -69,7 +69,7 @@ int Queue::push(Pirate* newPirate) {
         currNode->prev = newNode;
     }
     
-    return C_OK;
+    return *this;
 }
 
 /*   Function:  pop                         			        */
@@ -201,4 +201,26 @@ void Queue::deleteData() {
         delete currNode->data;
         currNode = nextNode;
     }
+}
+
+/*   Function:  overloaded subscript operator                   */
+/*         in:  Index of the queue                              */
+/*        out:  A pointer to the pirate at that index           */
+/*    Purpose:  Returns a pointer to a pirate at an index       */
+
+Pirate* Queue::operator[](int index) {
+	Node *currNode;
+	int currIndex = 0;
+
+	currNode = head;
+	
+	while (currNode != 0) {
+		if (currIndex == index) {
+			return currNode->data;
+		}
+		currNode = currNode->next;
+		currIndex += 1;
+	}
+	
+	return 0;
 }
