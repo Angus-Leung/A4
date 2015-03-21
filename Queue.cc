@@ -96,7 +96,7 @@ Pirate* Queue::front() {
 /*        out:  Boolean indicating empty or non-empty           */
 /*    Purpose:  Indicates whether or not the Queue is empty     */
 
-bool Queue::empty() {
+bool Queue::operator!() {
     if (head == 0)
         return true;
     else 

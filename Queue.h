@@ -29,7 +29,7 @@ class Queue
         Queue& operator+=(Pirate*);
         Queue& operator-=(Pirate*);
         Pirate* operator[](int);
-        bool operator!(Pirate*);
+        bool operator!();
     
     private:
         Node* head;
