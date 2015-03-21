@@ -12,6 +12,7 @@ class CArray
     int   getSize();
     Cell* get(int);
     int   add(Cell*);
+    
   private:
     int    size;
     Cell*  elements[MAX_CELLS];
