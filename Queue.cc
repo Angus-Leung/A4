@@ -15,7 +15,7 @@ Queue::Queue(Queue &origQueue) {
 	origCurrNode = origQueue.head;
 	
 	while (origCurrNode != 0) {
-		push(origCurrNode->data);
+		*this += origCurrNode->data;
 		origCurrNode = origCurrNode->next;
 	}
 }
