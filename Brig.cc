@@ -9,39 +9,6 @@ Brig::~Brig() {
 	}
 }
 
-/*   Function:  addPirate	                         		    */
-/*         in:  Location of pirate to be added to the brig		*/
-/*    Purpose:  Adds a single pirate to the brig in a cell		*/
-/*				that has enough space for it					*/
-
-int Brig::addPirate(Pirate* pirate)
-{
-    Cell* newCell;
-    int index = -1;
-    int rc;
-
-    for (int i=0; i<cells.getSize(); ++i) {
-        if (cells.get(i)->fits(pirate)) 
-            index = i;
-    }
-
-    if (index >= 0) {
-        rc = cells.get(index)->getPirates().push(pirate);
-        if (rc != C_OK)
-            return C_NOK;
-        cells.get(index)->reduceSpace(pirate->getSpace());
-    }
-    else {
-        newCell = new Cell;
-        cells.add(newCell);
-        rc = newCell->getPirates().push(pirate);
-        if (rc != C_OK)
-            return C_NOK;
-        newCell->reduceSpace(pirate->getSpace());
-    }
-    return C_OK;
-}
-
 /*   Function:  overloaded addition assignment operator         */
 /*         in:  Location of pirate to be added to the brig		*/
 /*    Purpose:  Adds a single pirate to the brig in a cell		*/
