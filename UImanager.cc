@@ -127,8 +127,8 @@ void UImanager::printBrig(Brig* brig)
         cout << "--Cell "<<i<<": space remaining="<<cells[i]->getSpace()<<endl;
         tempQueue = new Queue(cells[i]->getPirates());
         while (!tempQueue) {
-            cout <<"----Pirate id: "<< *(tempQueue)[0]->getId() 
-                << "  space: " << *(tempQueue)[0]->getSpace() << endl;
+            cout <<"----Pirate id: "<< (*tempQueue)[0]->getId() 
+                << "  space: " << (*tempQueue)[0]->getSpace() << endl;
             tempQueue->pop();
         }
         delete tempQueue;
