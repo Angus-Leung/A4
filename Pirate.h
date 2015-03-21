@@ -14,7 +14,7 @@ class Pirate
     Pirate();
     int getId();
     int getSpace();
-  private:
+  protected:
     static int  nextId;
     int         id;
     int         space;
