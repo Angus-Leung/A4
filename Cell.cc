@@ -27,4 +27,6 @@ void Cell::increaseSpace(int pSpace) { spaceRemaining += pSpace; }
 
 Cell& operator+=(Pirate* newPirate){
     pirates += newPirate;
+    
+    return *this;
 }

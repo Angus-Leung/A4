@@ -136,7 +136,7 @@ Queue& Queue::operator-=(Pirate* piratePtr) {
 
     delete currNode;
     
-    return this;
+    return *this;
 
 }
 

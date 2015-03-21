@@ -26,13 +26,14 @@ Cell* CArray::get(int index)
   return 0;
 }
 
-int CArray::add(Cell* cell)
+CArray& CArray::+=(Cell* cell)
 {
+  //returns without doing anything if size reaches max number of cells
   if (size == MAX_CELLS)
-    return C_NOK;
+    return *this;
 
   elements[size] = cell;
   size++;
-  return C_OK;
+  return *this;
 }
 
