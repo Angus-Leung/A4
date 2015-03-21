@@ -78,7 +78,7 @@ Queue& Queue::operator+=(Pirate* newPirate) {
 
 int Queue::pop() {
     if (head != 0)
-        return remove(head->data->getId());
+        return *(this) -= head->data;
     else 
         return C_NOK;
 }
