@@ -83,7 +83,7 @@ int Brig::removePirate(int pirateId) {
         // goes through each Queue and asks if it contains the Pirate to be removed
         foundPirate = currCell->getPirates().find(pirateId);
         if (foundPirate != 0) {
-            *currCell+=(currCell->getPirates().getPirateSpace(pirateId));
+            *currCell += (currCell->getPirates().getPirateSpace(pirateId));
             currCell->getPirates() -= foundPirate;  // remove it from the Queue
             delete foundPirate;                       // deallocate the data
             return C_OK;

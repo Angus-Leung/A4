@@ -71,7 +71,7 @@ void BrigManager::addPirates(int numPirates)
     
     while (numPirates > 0) {
         newPirate = new Pirate;
-        brig->addPirate(newPirate);
+        *brig += newPirate;
         --numPirates;
     }
 }
