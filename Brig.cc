@@ -5,7 +5,7 @@ Brig::Brig() { }
 Brig::~Brig() {
     // Deletes the data contained in each queue in each cell
 	for (int i=0; i<cells.getSize(); ++i) {
-		cells.get(i)->getPirates().deleteData();
+		cells[i]->getPirates().deleteData();
 	}
 }
 
