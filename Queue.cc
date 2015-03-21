@@ -76,11 +76,9 @@ Queue& Queue::operator+=(Pirate* newPirate) {
 /*        out:  Int indicating success or failure               */
 /*    Purpose:  Removes the pirate at the front of the Queue    */
 
-int Queue::pop() {
+void Queue::pop() {
     if (head != 0)
-        return *(this) -= head->data;
-    else 
-        return C_NOK;
+        *(this) -= head->data;
 }
 
 /*   Function:  front                         			        */
@@ -121,7 +119,7 @@ Queue& Queue::operator-=(Pirate* piratePtr) {
     }
 
     if (currNode == 0)
-        return C_NOK;
+        return *this;
 
     if (prevNode == 0) {
         head = currNode->next;

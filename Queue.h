@@ -19,7 +19,7 @@ class Queue
         Queue(Queue&);
         ~Queue();
         int push(Pirate*);
-        int pop();
+        void pop();
         Pirate* front();
         bool empty();
         int getPirateSpace(int);

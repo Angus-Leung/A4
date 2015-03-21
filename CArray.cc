@@ -26,7 +26,7 @@ Cell* CArray::operator[](int index)
   return 0;
 }
 
-CArray& CArray::+=(Cell* cell)
+CArray& CArray::operator+=(Cell* cell)
 {
   //returns without doing anything if size reaches max number of cells
   if (size == MAX_CELLS)
