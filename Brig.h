@@ -18,6 +18,8 @@ class Brig
         int addPirate(Pirate*);
         int removePirate(int);
         CArray& getCells();
+        Brig& operator+=(Pirate*);
+    
     private:
         CArray cells;
 };

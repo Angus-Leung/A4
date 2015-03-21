@@ -12,6 +12,8 @@ class CArray
     int   getSize();
     Cell* get(int);
     int   add(Cell*);
+    CArray& operator+=(Cell*);
+    Cell*   operator[](int);
     
   private:
     int    size;
