@@ -20,20 +20,20 @@ bool Cell::fits(Pirate* pirate)
     return true;
 }
 
-void Cell::operator+=(int pSpace) 
+Cell& Cell::operator+=(int pSpace) 
 { 
     spaceRemaining += pSpace; 
     return *this;
 }
 
-void Cell::operator-=(int pSpace) 
+Cell& Cell::operator-=(int pSpace) 
 { 
     spaceRemaining -= pSpace; 
     return *this;
 }
 
 
-Cell& operator+=(Pirate* newPirate){
+Cell& Cell::operator+=(Pirate* newPirate){
     pirates += newPirate;
     
     return *this;
